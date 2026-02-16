@@ -1,4 +1,4 @@
-![logo](assets/logo2.png ':size=600')
+![logo](assets/banner.png ':size=600')
 
 > A tool that helps you install, configure, and manage bspwm desktop environments.
 
