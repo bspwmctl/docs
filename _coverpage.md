@@ -1,8 +1,8 @@
-![logo](https://raw.githubusercontent.com/bspwmctl/bspwmctl/main/assets/logo/bspwmctl_logo2.png)
+![logo](assets/logo2.png ':size=600')
 
 # bspwmctl
 
-> Automated installer and manager for bspwm desktop environments
+> A tool that helps you install, configure, and manage bspwm desktop environments without the headaches.
 
 - 🐧 Multi-distro support (Debian, Arch, Fedora)
 - 📦 Multiple installation modes
@@ -12,5 +12,5 @@
 [GitHub](https://github.com/bspwmctl/bspwmctl)
 [Get Started](#quick-start)
 
-<!-- Background color -->
-![color](#2c3e50)
+<!-- Background gradient: black to gray -->
+![color](#1a1a1a)
