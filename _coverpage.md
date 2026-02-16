@@ -8,4 +8,4 @@
 - 🚀 Simple CLI interface
 
 [GitHub](https://github.com/bspwmctl/bspwmctl)
-[Get Started](#/?id=bspwmctl)
+<a href="#/README">Get Started</a>
