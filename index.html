@@ -14,16 +14,19 @@
       background: linear-gradient(45deg, #000000 0%, #2c2c2c 100%) !important;
     }
 
-    section.cover .cover-main img {
-      background: transparent !important;
+    section.cover .cover-main img, 
+    section.cover .cover-main img[alt='logo'] {
+      background-color: transparent !important;
       box-shadow: none !important;
       border: none !important;
       mask-image: none !important;
+      padding: 0 !important; 
     }
 
-    section.cover h1 { display: none; }
+    section.cover h1 { display: none; } 
+
     section.cover blockquote { color: #cccccc; font-size: 1.2rem; }
-    section.cover ul { color: #aaaaaa; }
+    section.cover ul { color: #aaaaaa; text-align: left; display: inline-block; }
 
     section.cover .cover-main a {
       margin: 0.5rem;
@@ -33,47 +36,41 @@
       transition: 0.3s;
     }
 
-    section.cover .cover-main a:last-child {
+    section.cover .cover-main p:last-of-type a:last-child {
       background-color: #42b983;
       color: white;
       padding: 0.8rem 2rem;
       border: 2px solid #42b983;
     }
-    section.cover .cover-main a:last-child:hover {
+    section.cover .cover-main p:last-of-type a:last-child:hover {
       background-color: #33a372;
       box-shadow: 0 0 15px rgba(66, 185, 131, 0.5);
     }
 
-    section.cover .cover-main a:first-child {
+    section.cover .cover-main p:last-of-type a:first-child {
       background-color: transparent;
       color: #fff;
       border: 2px solid #fff;
       padding: 0.8rem 2rem;
     }
-    section.cover .cover-main a:first-child:hover {
+    section.cover .cover-main p:last-of-type a:first-child:hover {
       background-color: rgba(255, 255, 255, 0.1);
-      color: #fff;
     }
   </style>
 </head>
 <body>
   <div id="app">Loading...</div>
-  
   <script>
     window.$docsify = {
       name: 'bspwmctl',
       repo: 'bspwmctl/bspwmctl',
-      
       coverpage: true,
       onlyCover: true,
-      
       loadSidebar: true,
       auto2top: true,
-      
       search: 'auto'
     }
   </script>
-  
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
