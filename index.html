@@ -7,96 +7,51 @@
   <meta name="description" content="Documentation for bspwmctl - Automated bspwm installer and manager">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   
-  <!-- Theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   
-  <!-- Custom styles for fullscreen cover -->
   <style>
-    /* Fullscreen cover without scroll */
-    section.cover {
-      height: 100vh !important;
-    }
-    
-    section.cover.show {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-    
-    /* Gradient background: black to gray */
+    /* Forzar fondo degradado en la portada */
     section.cover {
       background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%) !important;
+      background-color: #1a1a1a !important; /* Fallback */
     }
-    
-    /* Center content vertically */
-    section.cover .cover-main {
-      margin: 0 !important;
-      padding: 0 2rem;
-    }
-    
-    /* Logo styling */
-    section.cover img {
-      max-width: 600px;
-      width: 90%;
-      margin-bottom: 2rem;
-    }
-    
-    /* Title styling */
-    section.cover h1 {
-      color: #ffffff;
-      font-size: 3rem;
-      margin: 1.5rem 0 1rem 0;
-      font-weight: bold;
-    }
-    
-    /* Subtitle/description */
-    section.cover blockquote {
-      color: #e0e0e0;
-      font-size: 1.2rem;
-      border-left: none;
-      margin: 1rem auto 2rem auto;
-      max-width: 700px;
-    }
-    
-    /* Feature list */
-    section.cover ul {
-      color: #d0d0d0;
-      max-width: 600px;
-      margin: 2rem auto;
-      text-align: left;
-      line-height: 2;
-    }
-    
-    /* Button styling */
-    section.cover a {
-      color: #ffffff;
-      background: #42b983;
-      padding: 0.75rem 2rem;
-      border-radius: 2rem;
-      transition: all 0.3s;
+
+    /* Estilos del texto en la portada */
+    section.cover h1 { color: #fff; font-weight: bold; }
+    section.cover blockquote { color: #e0e0e0; font-size: 1.2rem; }
+    section.cover ul { color: #d0d0d0; line-height: 1.8; }
+
+    /* BOTONES */
+    section.cover .cover-main a {
       margin: 0.5rem;
+      border-radius: 2rem;
+      transition: all 0.3s ease;
       text-decoration: none;
-      display: inline-block;
+      font-weight: 600;
     }
-    
-    section.cover a:hover {
-      background: #33a372;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(66, 185, 131, 0.4);
-    }
-    
-    section.cover a:first-child {
-      background: transparent;
+
+    /* Botón Primario (El último botón, que será Get Started) */
+    section.cover .cover-main a:last-child {
+      background-color: #42b983;
+      color: white;
+      padding: 0.75rem 2rem;
       border: 2px solid #42b983;
     }
-    
-    section.cover a:first-child:hover {
-      background: rgba(66, 185, 131, 0.1);
+    section.cover .cover-main a:last-child:hover {
+      background-color: #33a372;
+      border-color: #33a372;
+      box-shadow: 0 4px 12px rgba(66, 185, 131, 0.4);
     }
-    
-    /* Hide scroll hint */
-    section.cover .cover-main > p:last-child a {
-      display: none;
+
+    /* Botón Secundario (El primer botón, GitHub) */
+    section.cover .cover-main a:first-child {
+      background-color: transparent;
+      color: #42b983;
+      border: 2px solid #42b983;
+      padding: 0.75rem 2rem;
+    }
+    section.cover .cover-main a:first-child:hover {
+      background-color: rgba(66, 185, 131, 0.1);
     }
   </style>
 </head>
@@ -106,40 +61,41 @@
   <script>
     window.$docsify = {
       name: 'bspwmctl',
-      repo: 'bspwmctl/bspwmctl',
+      repo: 'bspwmctl/bspwmctl', // Icono de GitHub en la esquina
+      
+      // Configuración de Portada
+      coverpage: true,
+      onlyCover: true, // ESTO es lo que impide bajar haciendo scroll
+
+      // Navegación
       loadSidebar: true,
       loadNavbar: false,
-      coverpage: true,
-      onlyCover: true,
+      auto2top: true,
       maxLevel: 4,
       subMaxLevel: 3,
-      auto2top: true,
       
-      // Search plugin
+      // Configuración del Buscador
       search: {
         placeholder: 'Search...',
         noData: 'No results found.',
-        depth: 3
+        depth: 6
       },
       
-      // Pagination
+      // Paginación (Siguiente/Anterior al final de cada página)
       pagination: {
         previousText: 'Previous',
         nextText: 'Next',
-      },
+        crossChapter: true,
+        crossChapterText: true,
+      }
     }
   </script>
   
-  <!-- Docsify core -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   
-  <!-- Search plugin -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  
-  <!-- Pagination -->
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   
-  <!-- Syntax highlighting -->
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
 </body>
