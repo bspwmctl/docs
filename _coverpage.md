@@ -10,7 +10,7 @@
 - 🚀 Simple CLI interface
 
 [GitHub](https://github.com/bspwmctl/bspwmctl)
-[Get Started](#quick-start)
+[Get Started](#/)
 
 <!-- Background gradient: black to gray -->
 ![color](#1a1a1a)
