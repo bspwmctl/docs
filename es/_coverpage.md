@@ -1,4 +1,4 @@
-![logo](assets/banner.png ':size=600')
+![logo](../assets/banner.png ':size=600')
 
 > Una herramienta que te ayuda a instalar, configurar y gestionar entornos de escritorio bspwm.
 
