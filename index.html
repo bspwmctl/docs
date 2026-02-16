@@ -10,8 +10,95 @@
   <!-- Theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   
-  <!-- Favicon (optional, add your logo later) -->
-  <!-- <link rel="icon" href="assets/favicon.ico"> -->
+  <!-- Custom styles for fullscreen cover -->
+  <style>
+    /* Fullscreen cover without scroll */
+    section.cover {
+      height: 100vh !important;
+    }
+    
+    section.cover.show {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    
+    /* Gradient background: black to gray */
+    section.cover {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%) !important;
+    }
+    
+    /* Center content vertically */
+    section.cover .cover-main {
+      margin: 0 !important;
+      padding: 0 2rem;
+    }
+    
+    /* Logo styling */
+    section.cover img {
+      max-width: 600px;
+      width: 90%;
+      margin-bottom: 2rem;
+    }
+    
+    /* Title styling */
+    section.cover h1 {
+      color: #ffffff;
+      font-size: 3rem;
+      margin: 1.5rem 0 1rem 0;
+      font-weight: bold;
+    }
+    
+    /* Subtitle/description */
+    section.cover blockquote {
+      color: #e0e0e0;
+      font-size: 1.2rem;
+      border-left: none;
+      margin: 1rem auto 2rem auto;
+      max-width: 700px;
+    }
+    
+    /* Feature list */
+    section.cover ul {
+      color: #d0d0d0;
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: left;
+      line-height: 2;
+    }
+    
+    /* Button styling */
+    section.cover a {
+      color: #ffffff;
+      background: #42b983;
+      padding: 0.75rem 2rem;
+      border-radius: 2rem;
+      transition: all 0.3s;
+      margin: 0.5rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    section.cover a:hover {
+      background: #33a372;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(66, 185, 131, 0.4);
+    }
+    
+    section.cover a:first-child {
+      background: transparent;
+      border: 2px solid #42b983;
+    }
+    
+    section.cover a:first-child:hover {
+      background: rgba(66, 185, 131, 0.1);
+    }
+    
+    /* Hide scroll hint */
+    section.cover .cover-main > p:last-child a {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <div id="app">Loading...</div>
@@ -23,6 +110,7 @@
       loadSidebar: true,
       loadNavbar: false,
       coverpage: true,
+      onlyCover: true,  // Important: prevents scrolling on cover
       maxLevel: 4,
       subMaxLevel: 3,
       auto2top: true,
