@@ -4,54 +4,55 @@
   <meta charset="UTF-8">
   <title>bspwmctl</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Documentation for bspwmctl - Automated bspwm installer and manager">
+  <meta name="description" content="Documentation for bspwmctl">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   
   <style>
-    /* Forzar fondo degradado en la portada */
     section.cover {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%) !important;
-      background-color: #1a1a1a !important; /* Fallback */
+      background: linear-gradient(45deg, #000000 0%, #2c2c2c 100%) !important;
     }
 
-    /* Estilos del texto en la portada */
-    section.cover h1 { color: #fff; font-weight: bold; }
-    section.cover blockquote { color: #e0e0e0; font-size: 1.2rem; }
-    section.cover ul { color: #d0d0d0; line-height: 1.8; }
+    section.cover .cover-main img {
+      background: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+      mask-image: none !important;
+    }
 
-    /* BOTONES */
+    section.cover h1 { display: none; }
+    section.cover blockquote { color: #cccccc; font-size: 1.2rem; }
+    section.cover ul { color: #aaaaaa; }
+
     section.cover .cover-main a {
       margin: 0.5rem;
       border-radius: 2rem;
-      transition: all 0.3s ease;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    /* Botón Primario (El último botón, que será Get Started) */
     section.cover .cover-main a:last-child {
       background-color: #42b983;
       color: white;
-      padding: 0.75rem 2rem;
+      padding: 0.8rem 2rem;
       border: 2px solid #42b983;
     }
     section.cover .cover-main a:last-child:hover {
       background-color: #33a372;
-      border-color: #33a372;
-      box-shadow: 0 4px 12px rgba(66, 185, 131, 0.4);
+      box-shadow: 0 0 15px rgba(66, 185, 131, 0.5);
     }
 
-    /* Botón Secundario (El primer botón, GitHub) */
     section.cover .cover-main a:first-child {
       background-color: transparent;
-      color: #42b983;
-      border: 2px solid #42b983;
-      padding: 0.75rem 2rem;
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 0.8rem 2rem;
     }
     section.cover .cover-main a:first-child:hover {
-      background-color: rgba(66, 185, 131, 0.1);
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
     }
   </style>
 </head>
@@ -61,42 +62,20 @@
   <script>
     window.$docsify = {
       name: 'bspwmctl',
-      repo: 'bspwmctl/bspwmctl', // Icono de GitHub en la esquina
+      repo: 'bspwmctl/bspwmctl',
       
-      // Configuración de Portada
       coverpage: true,
-      onlyCover: true, // ESTO es lo que impide bajar haciendo scroll
-
-      // Navegación
+      onlyCover: true,
+      
       loadSidebar: true,
-      loadNavbar: false,
       auto2top: true,
-      maxLevel: 4,
-      subMaxLevel: 3,
       
-      // Configuración del Buscador
-      search: {
-        placeholder: 'Search...',
-        noData: 'No results found.',
-        depth: 6
-      },
-      
-      // Paginación (Siguiente/Anterior al final de cada página)
-      pagination: {
-        previousText: 'Previous',
-        nextText: 'Next',
-        crossChapter: true,
-        crossChapterText: true,
-      }
+      search: 'auto'
     }
   </script>
   
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
 </body>
 </html>
