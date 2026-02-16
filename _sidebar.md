@@ -1,7 +1,7 @@
 - [Home](README.md)
 
 - Getting Started
-  - [Quick Start](README.md?id=quick-start)
+  - [Quick Start](README.md?id=🚀-quick-start)
   - [Installation](installation/)
 
 - Installation Guides
