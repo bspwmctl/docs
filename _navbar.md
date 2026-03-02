@@ -1,3 +1,3 @@
 * 🌐 Language
-  * [English](/)
-  * [Español](/es/)
+  * [English](/README)
+  * [Español](/es/README)
