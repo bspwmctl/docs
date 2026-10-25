@@ -1,96 +1,29 @@
-# Debian/Ubuntu Installation
+# Debian / Ubuntu
 
-This guide covers installing bspwmctl on Debian-based distributions including Ubuntu, Linux Mint, and Pop!_OS.
+This guide covers Debian, Ubuntu and their derivatives (Kali, Parrot, Linux Mint, Pop!_OS...).
 
-## Prerequisites
+## 1. Install bspwmctl
 
-Update your system first:
-
-```bash
-sudo apt update
-sudo apt upgrade -y
-```
-
-Install Git if you don't have it:
+Download the `.deb` from the [latest release](https://github.com/bspwmctl/bspwmctl/releases) and install it:
 
 ```bash
-sudo apt install git -y
+sudo apt install ./bspwmctl_*_all.deb
 ```
 
-## Installation Steps
+## 2. Install the desktop
 
-### 1. Clone the Repository
+As your normal user:
 
 ```bash
-git clone https://github.com/bspwmctl/bspwmctl.git
-cd bspwmctl
+bspwmctl install --standard
 ```
 
-### 2. Make Executable
+## 3. Log in to bspwm
 
-```bash
-chmod +x bspwmctl
-```
+Log out, choose **bspwm** in the session menu of your login screen and log back in.
 
-### 3. Run Installer
+## Notes
 
-Choose your installation mode:
-
-**Minimal (bspwm + sxhkd + kitty):**
-```bash
-./bspwmctl install --minimal
-```
-
-**Standard (includes Polybar and Picom):**
-```bash
-./bspwmctl install --standard
-```
-
-### 4. Log Out and Select bspwm
-
-After installation completes:
-
-1. Log out of your current session
-2. At the login screen, select **bspwm** from the session menu
-3. Log back in
-
-## Dependencies
-
-bspwmctl will automatically install these dependencies:
-
-```
-build-essential
-libxcb-util-dev
-libxcb-ewmh-dev
-libxcb-randr0-dev
-libxcb-icccm4-dev
-libxcb-keysyms1-dev
-libxcb-xinerama0-dev
-xcb
-libxcb-cursor-dev
-```
-
-Plus application-specific dependencies for kitty, polybar, etc.
-
-## Troubleshooting
-
-### Build Fails
-
-If compilation fails, make sure you have all development tools:
-
-```bash
-sudo apt install build-essential pkg-config -y
-```
-
-### Missing Dependencies
-
-Run the dependency check:
-
-```bash
-./bspwmctl check
-```
-
-## Next Steps
-
-- [Basic Usage](usage/)
-- [Available Commands](usage/commands.md)
+- **Ubuntu:** several packages (bspwm, polybar...) come from the *universe* repository. It is enabled by default, but if `apt` can't find them, enable it with `sudo add-apt-repository universe`.
+- **Firefox (`--all` mode):** Debian, Kali and Parrot get `firefox-esr`. Ubuntu-based distros already include Firefox, so bspwmctl doesn't install it there.
+- **Linux Mint, Pop!_OS and other derivatives** are not tested yet. They should work, and bspwmctl will warn you about it. Please [report](https://github.com/bspwmctl/bspwmctl/issues) any problem.

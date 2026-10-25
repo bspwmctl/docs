@@ -1,98 +1,28 @@
-# Fedora Installation
+# Fedora
 
-This guide covers installing bspwmctl on Fedora and RHEL-based distributions.
+This guide covers Fedora and its derivatives (Nobara...).
 
-## Prerequisites
+## 1. Install bspwmctl
 
-Update your system:
-
-```bash
-sudo dnf update -y
-```
-
-Install development tools:
+Download the `.rpm` from the [latest release](https://github.com/bspwmctl/bspwmctl/releases) and install it:
 
 ```bash
-sudo dnf groupinstall "Development Tools" -y
-sudo dnf install git -y
+sudo dnf install ./bspwmctl-*.noarch.rpm
 ```
 
-## Installation Steps
+## 2. Install the desktop
 
-### 1. Clone the Repository
+As your normal user:
 
 ```bash
-git clone https://github.com/bspwmctl/bspwmctl.git
-cd bspwmctl
+bspwmctl install --standard
 ```
 
-### 2. Make Executable
+## 3. Log in to bspwm
 
-```bash
-chmod +x bspwmctl
-```
+Log out, choose **bspwm** in the session menu of your login screen and log back in. If it isn't listed, see [bspwm doesn't appear in the login screen](installation/?id=bspwm-doesnt-appear-in-the-login-screen).
 
-### 3. Run Installer
+## Notes
 
-Choose your installation mode:
-
-**Minimal (bspwm + sxhkd + kitty):**
-```bash
-./bspwmctl install --minimal
-```
-
-**Standard (includes Polybar and Picom):**
-```bash
-./bspwmctl install --standard
-```
-
-### 4. Log Out and Select bspwm
-
-After installation:
-
-1. Log out of your session
-2. Select **bspwm** from GDM/SDDM
-3. Log in
-
-## Dependencies
-
-bspwmctl will install these RPM packages:
-
-```
-gcc
-make
-libxcb-devel
-xcb-util-devel
-xcb-util-wm-devel
-xcb-util-keysyms-devel
-xcb-util-cursor-devel
-```
-
-## Troubleshooting
-
-### SELinux Issues
-
-If you encounter permission errors, you may need to temporarily set SELinux to permissive:
-
-```bash
-sudo setenforce 0
-```
-
-Run the installer, then re-enable:
-
-```bash
-sudo setenforce 1
-```
-
-### Missing Dependencies
-
-Install development headers:
-
-```bash
-sudo dnf install libX11-devel libXft-devel
-```
-
-## Next Steps
-
-- [Basic Usage](usage/)
-- [Available Commands](usage/commands.md)
+- **RHEL, CentOS, Rocky and AlmaLinux are not supported:** bspwm and most of the desktop are not in their repositories.
+- **Nobara and other derivatives** are not tested yet. They should work, and bspwmctl will warn you about it. Please [report](https://github.com/bspwmctl/bspwmctl/issues) any problem.

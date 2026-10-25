@@ -1,95 +1,29 @@
-# Arch/Manjaro Installation
+# Arch / Manjaro
 
-This guide covers installing bspwmctl on Arch-based distributions including Arch Linux, Manjaro, and EndeavourOS.
+This guide covers Arch Linux and its derivatives (Manjaro, EndeavourOS, Garuda...).
 
-## Prerequisites
+## 1. Install bspwmctl
 
-Update your system:
-
-```bash
-sudo pacman -Syu
-```
-
-Install Git and base development tools:
+Download the `.pkg.tar.zst` from the [latest release](https://github.com/bspwmctl/bspwmctl/releases) and install it:
 
 ```bash
-sudo pacman -S git base-devel
+sudo pacman -U ./bspwmctl-*-any.pkg.tar.zst
 ```
 
-## Installation Steps
+## 2. Install the desktop
 
-### 1. Clone the Repository
+As your normal user:
 
 ```bash
-git clone https://github.com/bspwmctl/bspwmctl.git
-cd bspwmctl
+bspwmctl install --standard
 ```
 
-### 2. Make Executable
+## 3. Log in to bspwm
 
-```bash
-chmod +x bspwmctl
-```
+Log out, choose **bspwm** in the session menu of your login screen and log back in.
 
-### 3. Run Installer
+## Notes
 
-Choose your installation mode:
-
-**Minimal (bspwm + sxhkd + kitty):**
-```bash
-./bspwmctl install --minimal
-```
-
-**Standard (includes Polybar and Picom):**
-```bash
-./bspwmctl install --standard
-```
-
-### 4. Log Out and Select bspwm
-
-After installation:
-
-1. Log out
-2. Select **bspwm** from your display manager
-3. Log back in
-
-## Dependencies
-
-bspwmctl installs these from official repos:
-
-```
-base-devel
-libxcb
-xcb-util
-xcb-util-wm
-xcb-util-keysyms
-xcb-util-cursor
-```
-
-## Using AUR Packages (Optional)
-
-Some users prefer AUR packages. If you want to use those instead:
-
-```bash
-# Example with yay
-yay -S bspwm-git sxhkd-git
-```
-
-However, bspwmctl compiles from source by default for the latest features.
-
-## Troubleshooting
-
-### Package Conflicts
-
-If you have existing bspwm packages:
-
-```bash
-sudo pacman -R bspwm sxhkd
-```
-
-Then run bspwmctl again.
-
-## Next Steps
-
-- [Basic Usage](usage/)
-- [Available Commands](usage/commands.md)
+- **Full system upgrade:** bspwmctl installs packages with `pacman -Syu`, which also upgrades the rest of your system. Arch doesn't support partial upgrades, so this avoids broken dependencies.
+- **No AUR needed:** everything bspwmctl installs comes from the official repositories.
+- **Garuda and other derivatives** are not tested yet. They should work, and bspwmctl will warn you about it. Please [report](https://github.com/bspwmctl/bspwmctl/issues) any problem.

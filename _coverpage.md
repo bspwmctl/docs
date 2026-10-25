@@ -1,11 +1,11 @@
 ![logo](assets/banner.png ':size=600')
 
-> A tool that helps you install, configure, and manage bspwm desktop environments.
+> Install, configure and manage a complete bspwm desktop with one command.
 
-- 🐧 Multi-distro support
-- 📦 Multiple installation modes
-- 🎨 Pre-configured dotfiles included
-- 🚀 Simple CLI interface
+- 📦 Installs from your distro's official packages
+- 🐧 Debian, Ubuntu, Arch, Fedora and their derivatives
+- 🎨 Ready-to-use configs, with automatic backups of yours
+- 🚀 Available as `.deb`, `.rpm` and Arch packages
 
 [GitHub](https://github.com/bspwmctl/bspwmctl)
 [Get Started](README.md)

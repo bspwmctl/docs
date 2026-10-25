@@ -1,76 +1,60 @@
 # bspwmctl
 
-[![Version](https://img.shields.io/badge/version-v0.1.0-blue.svg)](https://github.com/bspwmctl/bspwmctl)
-[![Status](https://img.shields.io/badge/status-Pre--Alpha-red.svg)]()
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-v0.2.0--beta.1-blue.svg)](https://github.com/bspwmctl/bspwmctl/releases)
+[![Status](https://img.shields.io/badge/status-Beta-orange.svg)](https://github.com/bspwmctl/bspwmctl/releases)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/bspwmctl/bspwmctl/blob/main/LICENSE)
 
-**bspwmctl** is an automated installer and manager designed to deploy a fully configured bspwm desktop environment without the manual hassle.
+**bspwmctl** installs and manages a fully configured bspwm desktop: window manager, hotkeys, status bar, compositor, notifications and more, ready to use after a single command.
 
-!> **WARNING: PRE-ALPHA SOFTWARE**<br>
-This version (v0.1.0) is a **Pre-Alpha** release. It is intended for testing purposes on fresh installations.<br>
-
----
-
+!> **Beta software.** v0.2.0 is still in testing. Your existing configs are backed up before anything is overwritten, but try it on a test machine or VM first if you can.
 
 ## 🧩 What is bspwm?
 
-For those new to the ecosystem, **bspwm** (Binary Space Partitioning Window Manager) is a tiling window manager for X11.
+[bspwm](https://github.com/baskerville/bspwm) is a **tiling window manager** for X11. Unlike desktops such as GNOME or KDE:
 
-Unlike traditional desktop environments (like GNOME or KDE), bspwm:
-* **Tiles windows automatically:** Instead of overlapping windows, it splits the screen so you can see everything at once.
-* **Is extremely lightweight:** Uses minimal RAM and CPU resources.
-* **Is controlled by scripts:** Its configuration is handled by a simple shell script, making it incredibly hackable and flexible.
+- **It tiles windows automatically**: instead of overlapping, windows split the screen so you see everything at once.
+- **It is very lightweight**: it uses little RAM and CPU.
+- **It is configured with shell scripts**: easy to read, hack and extend.
 
-**bspwmctl** bridges the gap between a fresh Linux install and a fully functional, beautiful bspwm environment.
+Setting up bspwm by hand takes a lot of pieces (hotkey daemon, bar, compositor, launcher, notifications...). bspwmctl installs and configures all of them for you.
 
+## ✨ Features
 
-## ✨ Features (v0.1.0)
-
-- 🐧 **Multi-distribution support**: Currently testing on Debian, Arch, and Fedora.
-- 📦 **Smart Installation**: Detects your package manager and installs dependencies automatically.
-- 🎨 **Dotfiles Injection**: Deploys pre-configured setups for:
-  - `bspwm` (Window Manager)
-  - `sxhkd` (Hotkeys)
-  - `polybar` (Status bar)
-  - `picom` (Compositor/Transparency)
-  - `kitty` (Terminal emulator)
-- 🚀 **CLI Based**: Simple command-line interface (future versions will include a compiled binary).
-
+- 📦 **Official packages only**: everything is installed with `apt`, `pacman` or `dnf`, so it is updated and removed like any other package. Nothing is compiled.
+- 🐧 **Multi-distro**: Debian, Ubuntu, Arch, Fedora and their derivatives.
+- 🧱 **Three modes**: [minimal, standard and full](usage/modes.md), from just the window manager to a complete desktop.
+- 🎨 **Ready-to-use configs** for bspwm, sxhkd, kitty, polybar, picom, dunst and zsh.
+- 💾 **Automatic [backups](usage/backups.md)** of any config it would overwrite, with `bspwmctl restore` to go back.
 
 ## 🚀 Quick Start
 
-Remember: **Do not use sudo**.
+Download the package for your distro from the [latest release](https://github.com/bspwmctl/bspwmctl/releases) and install it:
 
 ```bash
-# 1. Clone the repository
-git clone [https://github.com/bspwmctl/bspwmctl.git](https://github.com/bspwmctl/bspwmctl.git)
-cd bspwmctl
+# Debian / Ubuntu
+sudo apt install ./bspwmctl_*_all.deb
 
-# 2. Make the script executable
-chmod +x bspwmctl
+# Fedora
+sudo dnf install ./bspwmctl-*.noarch.rpm
 
-# 3. Install (Default / Minimal mode)
-./bspwmctl install
-
-# Option: Install with standard packages
-./bspwmctl install --standard
+# Arch
+sudo pacman -U ./bspwmctl-*-any.pkg.tar.zst
 ```
 
+Then, **as your normal user** (not with `sudo`):
+
+```bash
+bspwmctl install --standard
+```
+
+Log out, choose **bspwm** in your login screen and log back in. See [First steps](usage/) for what to do next.
 
 ## Next Steps
 
-- 📖 [Installation Guide](installation/) - Detailed installation instructions
-
-- 🎯 [Usage Guide](usage/) - Learn how to use bspwmctl
-
-- 🤝 [Contributing](contributing/) - Help improve bspwmctl
-
-
-## 🤝 Contributing
-
-Found a bug? Want to add support for your distro?
-Check out the [Contributing Guide](contributing/README.md) or open an [Issues](https://github.com/bspwmctl/bspwmctl/issues).
-
+- 📖 [Installation guide](installation/): all installation methods and supported distros
+- 🧱 [Installation modes](usage/modes.md): what each mode installs
+- ⌨️ [Keybindings](usage/keybindings.md): how to use your new desktop
+- 🤝 [Contributing](contributing/): help improve bspwmctl
 
 ## 📄 License
 

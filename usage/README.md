@@ -1,94 +1,41 @@
-# Basic Usage
+# First steps
 
-Learn how to use bspwmctl after installation.
+## Log in
 
-## Quick Reference
+After `bspwmctl install`, log out, open the session menu in your login screen (usually a gear icon), choose **bspwm** and log in.
 
-```bash
-# Install bspwm environment
-./bspwmctl install [--minimal|--standard|--full]
+## The basics
 
-# Check installation status
-./bspwmctl check
+| Keys | Action |
+|------|--------|
+| `super + Return` | Open a terminal (kitty) |
+| `super + d` | Open the app launcher (rofi) |
+| `super + w` | Close the focused window |
+| `super + 1` ... `super + 0` | Go to desktop 1-10 |
+| `super + alt + q` | Log out of bspwm |
 
-# Show help
-./bspwmctl --help
+`super` is the Windows key. See [Keybindings](usage/keybindings.md) for the full list.
 
-# Show version
-./bspwmctl --version
-```
+## Wallpaper
 
-## First Steps After Installation
+Save an image as `~/.config/bspwm/wallpaper.png` (or `.jpg`) and restart bspwm with `super + alt + r`. Without it, a plain background color is used.
 
-### 1. Log into bspwm
-
-After running the installer:
-
-1. Log out of your current session
-2. At the login screen, click the session selector (usually a gear icon)
-3. Select **bspwm**
-4. Log in with your credentials
-
-### 2. Basic Keyboard Shortcuts
-
-The default keybindings (configured in `~/.config/sxhkd/sxhkdrc`):
-
-| Shortcut | Action |
-|----------|--------|
-| `Super + Enter` | Open terminal (kitty) |
-| `Super + Space` | Open app launcher (rofi) |
-| `Super + w` | Close window |
-| `Super + m` | Toggle monocle mode |
-| `Super + [1-9]` | Switch to desktop 1-9 |
-| `Super + Shift + [1-9]` | Move window to desktop 1-9 |
-| `Super + h/j/k/l` | Focus window (left/down/up/right) |
-| `Super + Alt + h/j/k/l` | Resize window |
-| `Super + Shift + q` | Restart bspwm |
-| `Super + Shift + Escape` | Reload sxhkd config |
-
-### 3. Explore Your Config
-
-Your configuration files are located in:
+## Your config files
 
 ```
-~/.config/bspwm/        ← Window manager config
-~/.config/sxhkd/        ← Keyboard shortcuts
-~/.config/kitty/        ← Terminal config
-~/.config/polybar/      ← Status bar (if standard mode)
-~/.config/picom/        ← Compositor (if standard mode)
+~/.config/bspwm/     window manager: desktops, gaps, window rules, autostart
+~/.config/sxhkd/     keybindings
+~/.config/kitty/     terminal
+~/.config/polybar/   status bar      (--standard)
+~/.config/picom/     compositor      (--standard)
+~/.config/dunst/     notifications   (--standard)
+~/.zshrc             shell           (--standard)
 ```
 
-## Installation Modes
+They are yours to edit. If you run `bspwmctl install` or `bspwmctl theme` again, your changed files are [backed up](usage/backups.md) before being replaced.
 
-See [Installation Modes](usage/modes.md) for detailed comparison.
+## Customize
 
-## Available Commands
-
-Check out [Commands Reference](usage/commands.md) for all available commands.
-
-## Customization
-
-### Change Keyboard Shortcuts
-
-Edit `~/.config/sxhkd/sxhkdrc`:
-
-```bash
-nano ~/.config/sxhkd/sxhkdrc
-```
-
-After editing, reload with `Super + Shift + Escape`
-
-### Modify Window Rules
-
-Edit `~/.config/bspwm/bspwmrc`:
-
-```bash
-nano ~/.config/bspwm/bspwmrc
-```
-
-Then restart bspwm with `Super + Shift + q`
-
-## Getting Help
-
-- [GitHub Issues](https://github.com/bspwmctl/bspwmctl/issues)
-- [Contributing Guide](https://github.com/bspwmctl/bspwmctl/blob/main/CONTRIBUTING.md)
+- **Keybindings:** edit `~/.config/sxhkd/sxhkdrc`, then reload it with `super + Escape`.
+- **Window manager:** edit `~/.config/bspwm/bspwmrc`, then restart bspwm with `super + alt + r`.
+- **Multiple monitors:** add your `xrandr` setup at the top of `~/.config/bspwm/bspwmrc`.
