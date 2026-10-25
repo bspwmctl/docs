@@ -1,133 +1,61 @@
-# Commands Reference
+# Commands
 
-Complete reference of all bspwmctl commands.
+Run every command as your normal user, not with `sudo`.
 
-## Installation Commands
+## install
 
-### install
-
-Install bspwm environment with specified mode.
+Install the desktop and apply the default configs.
 
 ```bash
-./bspwmctl install [MODE]
+bspwmctl install [--minimal | --standard | --all] [--no-dep] [--theme <name>]
 ```
 
-**Modes:**
-- `--minimal` - Install bspwm, sxhkd, and kitty (default)
-- `--standard` - Install minimal + polybar + picom
-- `--full` - Full installation *(coming in v0.2.0)*
+| Option | Description |
+|--------|-------------|
+| `--minimal` | bspwm, sxhkd, kitty, rofi (default) |
+| `--standard` | + bar, compositor, notifications, lock screen, zsh... |
+| `--all` | + file manager, browser and other apps |
+| `--no-dep` | Don't install packages, only apply the configs |
+| `--theme <name>` | Theme to apply (default: `default`) |
 
-**Examples:**
+See [Installation modes](usage/modes.md) for details.
+
+## theme
 
 ```bash
-# Minimal installation (default)
-./bspwmctl install
-./bspwmctl install --minimal
-
-# Standard installation
-./bspwmctl install --standard
-
-# Full installation (not yet available)
-./bspwmctl install --full
+bspwmctl theme            # show the current theme and the available ones
+bspwmctl theme <name>     # apply a theme
 ```
 
-## Utility Commands
+For now there is only the `default` theme. More themes will come from the [themes repository](https://github.com/bspwmctl/themes).
 
-### check
-
-Check installation status and dependencies.
+## restore
 
 ```bash
-./bspwmctl check
+bspwmctl restore             # list backups
+bspwmctl restore <backup>    # restore one
 ```
 
-Shows:
-- Which components are installed
-- Missing dependencies
-- Configuration file locations
+See [Backups](usage/backups.md).
 
-### --help / -h
-
-Display help information.
+## help / version
 
 ```bash
-./bspwmctl --help
-./bspwmctl -h
+bspwmctl help        # or -h, --help
+bspwmctl version     # or -v, --version
 ```
 
-### --version / -v
+## Coming soon
 
-Show bspwmctl version.
+- `bspwmctl update`
+- `bspwmctl uninstall`
 
-```bash
-./bspwmctl --version
-./bspwmctl -v
-```
+Until `uninstall` is available, remove bspwmctl with your package manager (`sudo apt remove bspwmctl`, `sudo pacman -R bspwmctl` or `sudo dnf remove bspwmctl`). The desktop packages are normal packages and can be removed the same way.
 
-## Upcoming Commands *(v0.2.0+)*
-
-These commands are planned for future releases:
-
-### update
-
-Update bspwm and related components.
-
-```bash
-./bspwmctl update [COMPONENT]
-```
-
-### uninstall
-
-Remove bspwm environment.
-
-```bash
-./bspwmctl uninstall
-```
-
-### theme
-
-Switch between themes.
-
-```bash
-./bspwmctl theme [THEME_NAME]
-```
-
-## Exit Codes
+## Exit codes
 
 | Code | Meaning |
 |------|---------|
 | `0` | Success |
-| `1` | General error |
-| `2` | Missing dependencies |
-| `3` | Unsupported distribution |
-| `130` | User cancelled (Ctrl+C) |
-
-## Examples
-
-### Fresh Installation
-
-```bash
-# Clone and install in one go
-git clone https://github.com/bspwmctl/bspwmctl.git && \
-cd bspwmctl && \
-chmod +x bspwmctl && \
-./bspwmctl install --standard
-```
-
-### Check Before Installing
-
-```bash
-# Check if your system is compatible
-./bspwmctl check
-
-# Then install if everything looks good
-./bspwmctl install
-```
-
-## Getting Help
-
-If you encounter issues with any command:
-
-1. Check the [Troubleshooting Guide](installation/#troubleshooting)
-2. Run `./bspwmctl check` to diagnose
-3. [Open an issue](https://github.com/bspwmctl/bspwmctl/issues/new/choose)
+| `1` | Error (the message explains why) |
+| `130` | Cancelled with Ctrl+C |

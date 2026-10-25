@@ -1,21 +1,20 @@
 - [Home](README.md)
 
-- Getting Started
-  - [Quick Start](README.md?id=🚀-quick-start)
-  - [Installation](installation/)
-
-- Installation Guides
-  - [Debian/Ubuntu](installation/debian.md)
-  - [Arch/Manjaro](installation/arch.md)
+- Installation
+  - [Overview](installation/)
+  - [Debian / Ubuntu](installation/debian.md)
+  - [Arch / Manjaro](installation/arch.md)
   - [Fedora](installation/fedora.md)
 
 - Usage
-  - [Basic Usage](usage/)
+  - [First steps](usage/)
+  - [Installation modes](usage/modes.md)
   - [Commands](usage/commands.md)
-  - [Installation Modes](usage/modes.md)
+  - [Keybindings](usage/keybindings.md)
+  - [Backups](usage/backups.md)
 
 - Contributing
-  - [How to Contribute](contributing/)
+  - [How to contribute](contributing/)
 
 - [Changelog](https://github.com/bspwmctl/bspwmctl/blob/main/CHANGELOG.md)
 - [License](https://github.com/bspwmctl/bspwmctl/blob/main/LICENSE)

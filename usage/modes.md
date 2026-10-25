@@ -1,131 +1,60 @@
-# Installation Modes
+# Installation modes
 
-bspwmctl offers different installation modes to suit your needs.
+Each mode includes everything from the previous one.
 
-## Available Modes
-
-### Minimal Mode (Default)
-
-**Command:** `./bspwmctl install --minimal` or `./bspwmctl install`
-
-The lightest installation with just the essentials.
-
-**Includes:**
-- **bspwm** - Window manager
-- **sxhkd** - Hotkey daemon
-- **kitty** - Terminal emulator
-
-**Best for:**
-- Low-resource systems
-- Users who want to customize everything themselves
-- Minimalist setups
-
-**Disk space:** ~50MB after compilation
-
----
-
-### Standard Mode
-
-**Command:** `./bspwmctl install --standard`
-
-Balanced installation with commonly used components.
-
-**Includes:**
-- Everything from Minimal mode
-- **Polybar** - Status bar
-- **Picom** - Compositor (transparency, shadows)
-- **Rofi** - Application launcher
-
-**Best for:**
-- Most users
-- Daily driver setups
-- First-time bspwm users
-
-**Disk space:** ~150MB after compilation
-
----
-
-### Full Mode *(Coming in v0.2.0)*
-
-**Command:** `./bspwmctl install --full`
-
-Complete installation with all the bells and whistles.
-
-**Will include:**
-- Everything from Standard mode
-- **Zsh** + **Powerlevel10k** - Modern shell
-- **Dunst** - Notification daemon
-- **Feh** - Wallpaper setter
-- Additional utilities and scripts
-
-**Best for:**
-- Users who want everything preconfigured
-- Complete desktop replacement
-- Power users
-
-**Estimated disk space:** ~300MB after compilation
-
----
-
-## Mode Comparison
-
-| Feature | Minimal | Standard | Full |
-|---------|---------|----------|------|
-| bspwm + sxhkd | ✅ | ✅ | ✅ |
-| Terminal (kitty) | ✅ | ✅ | ✅ |
-| Status bar (Polybar) | ❌ | ✅ | ✅ |
-| Compositor (Picom) | ❌ | ✅ | ✅ |
-| Launcher (Rofi) | ❌ | ✅ | ✅ |
-| Zsh + P10k | ❌ | ❌ | ✅ |
-| Notifications | ❌ | ❌ | ✅ |
-| Extra utilities | ❌ | ❌ | ✅ |
-| **Disk Space** | ~50MB | ~150MB | ~300MB |
-| **Install Time** | ~5-10 min | ~10-15 min | ~15-20 min |
-
----
-
-## Switching Between Modes
-
-You can upgrade from one mode to another by running the installer again:
+## Minimal (default)
 
 ```bash
-# Upgrade from minimal to standard
-./bspwmctl install --standard
-
-# Upgrade from standard to full (when available)
-./bspwmctl install --full
+bspwmctl install
 ```
 
-The installer will only install missing components.
+Just what you need to use bspwm:
 
----
+- **bspwm**: window manager
+- **sxhkd**: keybindings
+- **kitty**: terminal
+- **rofi**: app launcher
+- **feh**: wallpaper and image viewer
 
-## Which Mode Should I Choose?
+Best for users who want to build their own setup on top.
 
-### Choose **Minimal** if you:
-- Have limited disk space
-- Want maximum control over your config
-- Are comfortable building your setup from scratch
-- Have an older/slower computer
+## Standard (recommended)
 
-### Choose **Standard** if you:
-- Want a good balance of features and simplicity
-- Are new to bspwm
-- Want something that "just works"
-- **← Recommended for most users**
+```bash
+bspwmctl install --standard
+```
 
-### Choose **Full** if you:
-- Want the complete experience
-- Don't mind the extra disk space
-- Want all tools preconfigured
-- Are setting up a new system from scratch
+A complete desktop:
 
----
+- **Polybar**: status bar
+- **Picom**: compositor (transparency, shadows)
+- **Dunst**: notifications
+- **i3lock**: lock screen
+- **Flameshot**: screenshots
+- **Volume and brightness keys**: `pactl`, `brightnessctl`, and **pavucontrol** to manage audio
+- **Polkit agent**: lets graphical apps ask for your password
+- **xclip**: clipboard tool, **Papirus** icons
+- **Zsh** with autosuggestions and syntax highlighting
 
-## Next Steps
+?> Standard mode makes **zsh your default shell** and installs its own `~/.zshrc`. Your previous `~/.zshrc` is [backed up](usage/backups.md).
 
-After choosing your mode:
+## Full
 
-1. [Install bspwmctl](installation/)
-2. [Learn the basics](usage/)
-3. [Customize your setup](usage/#customization)
+```bash
+bspwmctl install --all
+```
+
+Standard plus everyday apps:
+
+- **Thunar**: file manager (`super + e`)
+- **Firefox**: browser (`super + shift + f`). Firefox ESR on Debian; Ubuntu-based distros keep their own Firefox.
+- **btop**: system monitor
+- **mpv**: video player
+- **zathura**: PDF viewer
+- **NetworkManager connection editor**
+
+## Changing mode
+
+Run `bspwmctl install` again with another mode. Packages you already have are skipped, so moving up from minimal to standard only installs what is missing.
+
+Moving down doesn't uninstall anything: packages from a bigger mode stay installed.
