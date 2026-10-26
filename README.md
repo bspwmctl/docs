@@ -1,6 +1,6 @@
 # bspwmctl
 
-[![Version](https://img.shields.io/badge/version-v0.2.0--beta.1-blue.svg)](https://github.com/bspwmctl/bspwmctl/releases)
+[![Version](https://img.shields.io/github/v/release/bspwmctl/bspwmctl?include_prereleases&label=version&color=blue)](https://github.com/bspwmctl/bspwmctl/releases)
 [![Status](https://img.shields.io/badge/status-Beta-orange.svg)](https://github.com/bspwmctl/bspwmctl/releases)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/bspwmctl/bspwmctl/blob/main/LICENSE)
 

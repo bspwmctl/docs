@@ -10,9 +10,9 @@
 | `super + d` | App launcher (rofi) |
 | `super + e` | File manager (Thunar, `--all`) |
 | `super + shift + f` | Browser (Firefox, `--all`) |
-| `super + l` | Lock screen |
-| `Print` | Screenshot of an area |
-| `shift + Print` | Screenshot of the whole screen |
+| `super + l` | Lock screen (`--standard`) |
+| `Print` | Screenshot of an area (`--standard`) |
+| `shift + Print` | Screenshot of the whole screen (`--standard`) |
 
 ## Windows
 
