@@ -59,6 +59,15 @@ bspwmctl will:
 
 Then log out, choose **bspwm** in your login screen and log back in.
 
+## Update and uninstall
+
+```bash
+bspwmctl update       # install the latest version of bspwmctl
+bspwmctl uninstall    # remove its configs and restore yours
+```
+
+See [Commands](usage/commands.md#update) for details.
+
 ## Troubleshooting
 
 ### bspwm doesn't appear in the login screen

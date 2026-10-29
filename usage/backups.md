@@ -4,7 +4,7 @@ bspwmctl never overwrites your files without keeping a copy.
 
 ## How it works
 
-Before `bspwmctl install` or `bspwmctl theme` replaces a config, it checks whether any of your files would change. If so, it copies them to:
+Before `bspwmctl install`, `theme`, `update --configs` or `uninstall` replaces or removes a config, it checks whether any of your files would change. If so, it copies them to:
 
 ```
 ~/.local/share/bspwmctl/backups/<date>/

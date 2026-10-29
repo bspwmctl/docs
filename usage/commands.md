@@ -38,19 +38,48 @@ bspwmctl restore <backup>    # restore one
 
 See [Backups](usage/backups.md).
 
+## update
+
+```bash
+bspwmctl update              # update bspwmctl to the latest version
+bspwmctl update --configs    # and re-apply the new default configs
+```
+
+Downloads the package of the latest release from GitHub and installs it with `apt`, `dnf` or `pacman`. If you are on a beta, you get the newest beta or release; on a stable version, only stable releases.
+
+Your configs are not changed unless you add `--configs`. Then the configs of your current theme are applied again, with your current ones backed up first (see [Backups](usage/backups.md)).
+
+?> If you run bspwmctl from a clone of the repository, update it with `git pull` instead.
+
+## uninstall
+
+```bash
+bspwmctl uninstall           # asks for confirmation
+bspwmctl uninstall --yes     # doesn't ask
+```
+
+Removes what bspwmctl wrote to your home folder and puts back what you had before:
+
+- `~/.config/bspwm`, `sxhkd`, `kitty`, `polybar`, `picom`, `dunst` and `~/.zshrc`: removed, or replaced by the version you had before installing bspwmctl
+- The bundled fonts in `~/.local/share/fonts/bspwmctl/`
+- Your login shell goes back to the one you had before, if bspwmctl changed it to zsh
+
+Everything it removes is backed up first, so you can get it back with `bspwmctl restore`. The installed programs (bspwm, kitty, polybar...) are kept. To remove bspwmctl itself afterwards:
+
+```bash
+sudo apt remove bspwmctl      # Debian / Ubuntu
+sudo pacman -R bspwmctl       # Arch
+sudo dnf remove bspwmctl      # Fedora
+```
+
+!> If you installed with 0.2.0-beta.1, bspwmctl doesn't know which configs you had before, so it removes all of them. You can still find your old ones in the backups.
+
 ## help / version
 
 ```bash
 bspwmctl help        # or -h, --help
 bspwmctl version     # or -v, --version
 ```
-
-## Coming soon
-
-- `bspwmctl update`
-- `bspwmctl uninstall`
-
-Until `uninstall` is available, remove bspwmctl with your package manager (`sudo apt remove bspwmctl`, `sudo pacman -R bspwmctl` or `sudo dnf remove bspwmctl`). The desktop packages are normal packages and can be removed the same way.
 
 ## Exit codes
 
