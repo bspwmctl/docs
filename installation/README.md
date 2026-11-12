@@ -26,7 +26,7 @@ Download the package for your distro from the [latest release](https://github.co
 - [Arch / Manjaro](installation/arch.md)
 - [Fedora](installation/fedora.md)
 
-The package installs the `bspwmctl` command, so it is available from anywhere.
+The package installs the `bspwmctl` command, so it is available from anywhere, along with its manual (`man bspwmctl`) and <kbd>Tab</kbd> completion for bash, zsh and fish.
 
 ### Option 2: from the repository
 
