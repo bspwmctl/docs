@@ -2,6 +2,8 @@
 
 Run every command as your normal user, not with `sudo`.
 
+The full reference is also available offline with `man bspwmctl`, and pressing <kbd>Tab</kbd> completes commands, options, theme names and backups in bash, zsh and fish (in bash it needs the `bash-completion` package, installed by default except on Arch).
+
 ## install
 
 Install the desktop and apply the default configs.
